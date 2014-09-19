@@ -21,3 +21,25 @@ def getAdjs(inp):
     #return re.findall(r'[a-zA-Z0-9_]+y', inp) # the same thing
     #return re.findall(r'\w{1,}y', inp) # the same thing
 print getAdjs('the funny book was goofy')
+
+def isEmail(inp):
+	result = re.search(r'\w+@\w.+\D{2,4}', inp)
+	return result != None
+print isEmail('blah@hello.com')
+print isEmail('sd$sd@hello.com')
+
+def getTxts(inp):
+	tuples = re.findall(r'(\w+.txt )+',inp)
+	return tuples
+
+print getTxts('yo.html blah.txt woah.txt he ')		
+
+#str = 'purple alice@google.com, blah monkey bob@abc.com blah dishwasher'
+#tuples = re.findall(r'([\w\.-]+)@([\w\.-]+)', str)
+#print tuples  ## [('alice', 'google.com'), ('bob', 'abc.com')]
+#for tuple in tuples:
+#  print tuple[0]  ## username
+#  print tuple[1]  ## host
+
+def percAwesome(inp):
+	
