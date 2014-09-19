@@ -29,17 +29,14 @@ print isEmail('blah@hello.com')
 print isEmail('sd$sd@hello.com')
 
 def getTxts(inp):
-	tuples = re.findall(r'(\w+.txt )+',inp)
+	tuples = re.findall(r'\S+.txt ',inp) 
 	return tuples
-
 print getTxts('yo.html blah.txt woah.txt he ')		
 
-#str = 'purple alice@google.com, blah monkey bob@abc.com blah dishwasher'
-#tuples = re.findall(r'([\w\.-]+)@([\w\.-]+)', str)
-#print tuples  ## [('alice', 'google.com'), ('bob', 'abc.com')]
-#for tuple in tuples:
-#  print tuple[0]  ## username
-#  print tuple[1]  ## host
-
 def percAwesome(inp):
+	Words = len(re.findall(r'\S+', inp))
+	Awesome = len(re.findall(r'\S*awesome\S*|awes0me\S*', inp))
+	return round(float(Awesome)/float(Words) * 100,1)
+print percAwesome('iamawesomeblah and awes0me is as awesomeo does')
+
 	
